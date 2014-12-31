@@ -10,9 +10,12 @@
 %                  plot_dots(xy, color)
 
 % ----- plot simple gradient descent example
-figure;
-plot_gd_example();
+%figure;
+%plot_gd_example();
 %pause;
+
+% ----- pseudocode for gd
+gd_pseudocode();
 
 % ----- plot the rosenbrock function
 %figure;
