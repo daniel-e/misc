@@ -1,4 +1,4 @@
-## Measure GFLOPS that can be achieved for a element-wise matrix multiplication plus an upper bound
+## Measure GFLOPS that can be achieved for an element-wise matrix multiplication plus an upper bound
 
 Simply run the script `run.sh`. It will compile a binary which measures the memory throughput to estimate the maximum number of GLFOPS that can be achieved on your system for an element-wise matrix multiplication.
 
