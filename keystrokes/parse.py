@@ -2,17 +2,17 @@
 
 import json, sys, scipy.io
 
-infile = sys.argv[1]
+ofile = sys.argv[1]
 
 def deltas(items):
 	v = sorted(items)
 	for i in range(2, len(v)):
-		yield(int(v[i]) - int(v[i - 1]))
+		yield float(int(v[i]) - int(v[i - 1]))
 
-jdata = json.loads(open(infile).read());
+data = json.loads(sys.stdin.read());
 
 items = {}
-for i in jdata['request']['records'].split(";"):
+for i in data:
 	id, time, what, keycode = i.split(",")
 	k = id + what
 	if not k in items:
@@ -25,4 +25,4 @@ for k, v in items.items():
 # vectors:
 # f1up, f1down, f1pressed, ... f5pressed
 
-scipy.io.savemat(infile[:-3] + "mat", mdict = items, oned_as = "row")
+scipy.io.savemat(ofile, mdict = items, oned_as = "row")
